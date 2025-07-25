@@ -1,8 +1,8 @@
 //your parameter variables go here!
 
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -50,7 +50,7 @@ star(116, 118, 6);
 star(144, 84, 6);
 star(189, 64, 6);
 star(187, 7, 6);
-star(169, 126, 6);
+star(190, 126, 6);
 star(91, 180, 6);
 star(176, 170, 6); 
 star(10, 157, 6);
