@@ -5,8 +5,8 @@ let eyeX = 100
 let eyeY = 100
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -30,9 +30,14 @@ Grid()
 Star()
 
 
-rotate (340)
+//rotate (340)
 eyeOval (100,100) //oval eye
 eyeOval (150, 150)
+
+fill (255)
+circle (0,0,50)
+circle (150,200,50)
+
 
 
 }
