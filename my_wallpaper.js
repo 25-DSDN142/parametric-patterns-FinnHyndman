@@ -1,8 +1,4 @@
 //your parameter variables go here!
-let eyescaleW = 40
-
-let eyeX = 100
-let eyeY = 100
 
 function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -23,20 +19,12 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
-Grid()
+//Grid()
+// star (x, y scale)
+star(20,20,20)
+star(40,30,10)
+star(35,10,15)
 
-//Eye () //circle protoype eye 
-
-Star()
-
-
-//rotate (340)
-eyeOval (100,100) //oval eye
-eyeOval (150, 150)
-
-fill (255)
-circle (0,0,50)
-circle (150,200,50)
 
 
 
@@ -109,13 +97,23 @@ circle (eyeX, eyeY, eyescaleW/2.2) // eye pupil
 
 }
 
-function Star (){
+function star(x,y,s) {
+  //inside Star
+  stroke(24, 0, 41)
+  fill (255)
+  square (x-s/2,y-s/2,s) 
 
-stroke(180, 125, 0) 
-line (50,75, 50,125)
-line (25,100, 75,100)
-line (37.5,87.5, 62.5,112.5)
+  //star indents
+  fill(24, 0, 41)
+  beginShape() 
+  stroke (32, 0, 54)
+  strokeWeight (1)
 
-
-
+  arc(x-s/2, y-s/2, s, s, 0, 90);
+  arc(x+s/2, y-s/2, s, s, 90, 180);
+  arc(x+s/2, y+s/2, s, s, 180, 270);
+  arc(x-s/2, y+s/2, s, s, 270, 0);
+  endShape(CLOSE);
 }
+
+
