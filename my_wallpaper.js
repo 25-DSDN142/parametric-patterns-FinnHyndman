@@ -21,11 +21,49 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
 //Grid()
 // star (x, y scale)
+//top left cluser
 star(20,20,20)
 star(40,30,10)
 star(35,10,15)
 
+//bottom left cluser
+star(170,185,25)
+star(155,175,15)
 
+//middle top cluster
+star(100,5,15)
+
+//random small stars
+//star(18, 27, 6);
+star(44, 38, 6);
+star(58, 42, 6);
+star(93, 21, 6);
+star(5, 98, 6);
+star(66, 77, 6);
+star(123, 11, 6);
+star(20, 129, 6);
+star(42, 127, 6);
+star(37, 152, 6);
+star(133, 33, 6);
+star(147, 73, 6);
+star(116, 118, 6);
+star(144, 84, 6);
+star(189, 64, 6);
+star(187, 7, 6);
+star(169, 126, 6);
+star(91, 180, 6);
+star(176, 170, 6); 
+star(10, 157, 6);
+
+
+
+
+
+
+// Radiating Planet (x, y scale)
+planetRadiate (80,70,3)
+
+planetRadiate (150,130,4)
 
 
 }
@@ -116,4 +154,24 @@ function star(x,y,s) {
   endShape(CLOSE);
 }
 
+function planetRadiate(x,y,s) {
+
+  noStroke ()
+  fill (227, 72, 30)
+  circle (x,y,s*10)
+
+  noFill ()
+  stroke (255)
+  strokeWeight (s/2.5)
+  circle (x,y,s*11)
+
+  strokeWeight (s/3.33)
+  circle (x,y,s*12.5)
+
+  strokeWeight (s/5)
+  circle (x,y,s*14)
+
+  strokeWeight (s/10)
+  circle (x,y,s*15.5)
+}
 
