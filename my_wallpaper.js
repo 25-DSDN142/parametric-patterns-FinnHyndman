@@ -24,7 +24,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 //top left cluser
 star(20,20,20)
 star(40,30,10)
-star(35,10,15)
+star(30,40,15)
 
 //bottom left cluser
 star(170,185,25)
@@ -57,20 +57,15 @@ star(10, 157, 6);
 
 
 
-
-aquarius()
-
-
-
-
+//aquarius()
 
 
 // Radiating Planet (x, y scale)
-planetRadiate (80,70,3)
+planetRadiate (160,90,3)
 
 //planetRadiate (150,130,4)
 
-test()
+cluster()
 
 
 }
@@ -182,52 +177,34 @@ function planetRadiate(x,y,s) {
   circle (x,y,s*15.5)
 }
 
-function aquarius () {
+function cluster () {
 
 
 
 fill (255)
-
-//cluster top (point# from left to right)
-circle (50, 5, 10) //point 1
-circle (80, 30, 10) //point 2
-circle (110, 60, 10)//point 3
-circle (140, 5, 10) //point 4
-
-//bottom left cluster
+circle (80, 30, 10) //a
+circle (110, 60, 10)//b
 circle (185, 140, 10)//c
+circle (150, 180, 10)//d
+circle (100, 161, 10)//e
+circle (70, 150, 10)//f
 
-//bottom middle cluster (point# from left to right, top to bottom)
-circle (70, 150, 10)//point 1
-circle (100, 161, 10)//point 2
-circle (150, 180, 10)// point 3
-circle (100,195,10) //point 4
-
-
+circle (190, 200, 10) //small cyan
+circle (140, 0, 10) //big
+circle (60, 0, 10) //small pink
+circle (110,200,10) //big
 
 
 
 
 stroke (255)
-line (50, 5, 80, 30)
-line (80, 30, 140, 5)
-line (140, 5, 110, 60)
+line (60, 0, 80, 30)
+line (80, 30, 140, 0)
+line (140, 0, 110, 60)
 
 line (190, 200, 185, 140)
 
-line (100,195, 150, 180)
+//line (110,200, 150, 180)
 line (150, 180,70, 150)
-//line (100, 161,185, 140)
-}
-
-function test () {
-
-fill (255,9,255) //pink
-circle (50, 0, 10) //small
-circle (100,200,10) //big
-
-
-fill (9,255,255) //cyan
-circle (190, 200, 10) //small
-circle (140, 0, 10) //big
+line (100, 161,185, 140)
 }
