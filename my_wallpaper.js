@@ -1,7 +1,8 @@
 //your parameter variables go here!
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+ pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -13,7 +14,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(24, 0, 41); //blood red colour
+  background(24, 0, 41);
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -27,7 +28,7 @@ star(35,10,15)
 
 //bottom left cluser
 star(170,185,25)
-star(155,175,15)
+//star(155,175,15)
 
 //middle top cluster
 star(100,5,15)
@@ -54,13 +55,10 @@ star(91, 180, 6);
 star(176, 170, 6); 
 star(10, 157, 6);
 
-star(100, 195,50);//key
-
-star(150, 5, 50);//
 
 
 
-
+aquarius()
 
 
 
@@ -70,7 +68,9 @@ star(150, 5, 50);//
 // Radiating Planet (x, y scale)
 planetRadiate (80,70,3)
 
-planetRadiate (150,130,4)
+//planetRadiate (150,130,4)
+
+test()
 
 
 }
@@ -182,3 +182,52 @@ function planetRadiate(x,y,s) {
   circle (x,y,s*15.5)
 }
 
+function aquarius () {
+
+
+
+fill (255)
+
+//cluster top (point# from left to right)
+circle (50, 5, 10) //point 1
+circle (80, 30, 10) //point 2
+circle (110, 60, 10)//point 3
+circle (140, 5, 10) //point 4
+
+//bottom left cluster
+circle (185, 140, 10)//c
+
+//bottom middle cluster (point# from left to right, top to bottom)
+circle (70, 150, 10)//point 1
+circle (100, 161, 10)//point 2
+circle (150, 180, 10)// point 3
+circle (100,195,10) //point 4
+
+
+
+
+
+
+stroke (255)
+line (50, 5, 80, 30)
+line (80, 30, 140, 5)
+line (140, 5, 110, 60)
+
+line (190, 200, 185, 140)
+
+line (100,195, 150, 180)
+line (150, 180,70, 150)
+//line (100, 161,185, 140)
+}
+
+function test () {
+
+fill (255,9,255) //pink
+circle (50, 0, 10) //small
+circle (100,200,10) //big
+
+
+fill (9,255,255) //cyan
+circle (190, 200, 10) //small
+circle (140, 0, 10) //big
+}
