@@ -2,7 +2,7 @@
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
- pWallpaper.output_mode(GRID_WALLPAPER);
+ //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -26,12 +26,16 @@ star(20,20,20)
 star(40,30,10)
 star(30,40,15)
 
-//bottom left cluser
-star(170,185,25)
-//star(155,175,15)
 
-//middle top cluster
-star(100,5,15)
+
+
+//bottom middle cluser
+star(60,185,25)
+star(40,190,15)
+
+
+//top right cluster
+star(170,10,15)
 
 //random small stars
 //star(18, 27, 6);
@@ -62,6 +66,10 @@ star(10, 157, 6);
 
 // Radiating Planet (x, y scale)
 planetRadiate (160,90,3)
+planetRadiate (60,110,2)
+planetRadiate (40,80,1)
+
+
 
 //planetRadiate (150,130,4)
 
@@ -140,7 +148,7 @@ circle (eyeX, eyeY, eyescaleW/2.2) // eye pupil
 function star(x,y,s) {
   //inside Star
   stroke(24, 0, 41)
-  fill (255)
+  fill (255, 238, 194)
   square (x-s/2,y-s/2,s) 
 
   //star indents
@@ -182,17 +190,17 @@ function cluster () {
 
 
 fill (255)
-circle (80, 30, 10) //a
-circle (110, 60, 10)//b
-circle (185, 140, 10)//c
-circle (150, 180, 10)//d
-circle (100, 161, 10)//e
-circle (70, 150, 10)//f
+circle (80, 30, 5) //a
+circle (110, 60, 5)//b
+circle (185, 140, 5)//c
+circle (150, 180, 5)//d
+circle (100, 161, 5)//e
+circle (70, 150, 5)//f
 
-circle (190, 200, 10) //small cyan
-circle (140, 0, 10) //big
-circle (60, 0, 10) //small pink
-circle (110,200,10) //big
+circle (190, 200, 5) //small cyan
+circle (140, 0, 5) //big
+circle (60, 0, 5) //small pink
+circle (110,200,5) //big
 
 
 
