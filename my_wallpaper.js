@@ -26,19 +26,14 @@ star(20,20,20)
 star(40,30,10)
 star(30,40,15)
 
-
-
-
 //bottom middle cluser
 star(60,185,25)
 star(40,190,15)
-
 
 //top right cluster
 star(170,10,15)
 
 //random small stars
-//star(18, 27, 6);
 star(44, 38, 6);
 star(58, 42, 6);
 star(93, 21, 6);
@@ -49,9 +44,9 @@ star(20, 129, 6);
 star(42, 127, 6);
 star(37, 152, 6);
 star(133, 33, 6);
-star(147, 73, 6);
+star(130, 73, 6);
 star(116, 118, 6);
-star(144, 84, 6);
+star(117, 84, 6);
 star(189, 64, 6);
 star(187, 7, 6);
 star(190, 126, 6);
@@ -59,17 +54,10 @@ star(91, 180, 6);
 star(176, 170, 6); 
 star(10, 157, 6);
 
-
-
-//aquarius()
-
-
-// Radiating Planet (x, y scale)
+// Radiating Planet (planetX, planetY, planetScale)
 planetRadiate (160,90,3)
 planetRadiate (60,110,2)
 planetRadiate (40,80,1)
-
-
 
 //planetRadiate (150,130,4)
 
@@ -78,111 +66,56 @@ cluster()
 
 }
 
-function Grid () {
-stroke (32, 0, 54)
-strokeWeight (1)
-line (0,50, 200,50)
-line (0,100, 200,100)
-line (0,150, 200,150)
+function star(starX,starY,starScale) {
 
-line (50,0, 50,200)
-line (100,0, 100,200)
-line (150,0, 150,200)
-
-}
-
-function Eye () { 
-//circle numbering order is from the outside in
-
-noStroke(0)
-fill (74, 0, 128)
-circle (eyeX, eyeY, eyescaleW * 2.6) // 1st circle
-
-fill(255)
-circle (eyeX, eyeY, eyescaleW * 2.2) // 2nd circle
-
-fill(232, 199, 255)
-circle (eyeX, eyeY, eyescaleW * 1.8) //3rd circle
-
-fill(57, 0, 97)
-circle (eyeX, eyeY, eyescaleW * 1.6) //4th circle
-
-fill (74, 0, 128)
-circle (eyeX, eyeY, eyescaleW * 1.4) //5th circle
-
-fill (101, 0, 168)
-circle (eyeX, eyeY, eyescaleW *1.2) //6th circle
-
-fill(0)
-circle (eyeX, eyeY, eyescaleW) //center pupil
-}
-
-function eyeOval () {
-noStroke(0)
-fill (74, 0, 128)
-ellipse(eyeX, eyeY, eyescaleW*2.4, eyescaleW/0.8) // 1st circle
-
-fill(255)
-ellipse(eyeX, eyeY, eyescaleW*2, eyescaleW/1) // 2nd circle
-
-fill(232, 199, 255)
-ellipse(eyeX, eyeY, eyescaleW*1.6, eyescaleW/1.2) //3rd circle
-
-fill(57, 0, 97)
-ellipse(eyeX, eyeY, eyescaleW*1.4, eyescaleW/1.4) //4th circle
-
-fill (74, 0, 128)
-ellipse(eyeX, eyeY, eyescaleW*1.2, eyescaleW/1.6) //5th circle
-
-fill (101, 0, 168)
-ellipse(eyeX, eyeY, eyescaleW, eyescaleW/2); //6th circle
-
-//fill (255)
-//ellipse(eyeX, eyeY, eyescaleW*0.8, eyescaleW/2.4); //6th circle
-
-fill(0)
-circle (eyeX, eyeY, eyescaleW/2.2) // eye pupil
-
-}
-
-function star(x,y,s) {
+  if( starScale > 9){
+  fill (255, 238, 194)
+  }
+  else{
+  fill (255)
+  }
+  
   //inside Star
   stroke(24, 0, 41)
-  fill (255, 238, 194)
-  square (x-s/2,y-s/2,s) 
+  square (starX-starScale/2,starY-starScale/2,starScale) 
 
   //star indents
   fill(24, 0, 41)
   beginShape() 
   stroke (32, 0, 54)
   strokeWeight (1)
-
-  arc(x-s/2, y-s/2, s, s, 0, 90);
-  arc(x+s/2, y-s/2, s, s, 90, 180);
-  arc(x+s/2, y+s/2, s, s, 180, 270);
-  arc(x-s/2, y+s/2, s, s, 270, 0);
+  arc(starX-starScale/2, starY-starScale/2, starScale, starScale, 0, 90);
+  arc(starX+starScale/2, starY-starScale/2, starScale, starScale, 90, 180);
+  arc(starX+starScale/2, starY+starScale/2, starScale, starScale, 180, 270);
+  arc(starX-starScale/2, starY+starScale/2, starScale, starScale, 270, 0);
   endShape(CLOSE);
 }
 
-function planetRadiate(x,y,s) {
+function planetRadiate(planetX,planetY,planetScale) {
+
+  if( planetScale < 3){
+  fill (207, 0, 0)
+  }
+  else{
+  fill (227, 72, 30)
+  }
 
   noStroke ()
-  fill (227, 72, 30)
-  circle (x,y,s*10)
+  circle (planetX,planetY,planetScale*10) //center planet
 
   noFill ()
   stroke (255)
-  strokeWeight (s/2.5)
-  circle (x,y,s*11)
+  strokeWeight (planetScale/2.5)
+  circle (planetX,planetY,planetScale*11) //first ring
 
-  strokeWeight (s/3.33)
-  circle (x,y,s*12.5)
+  strokeWeight (planetScale/3.33)
+  circle (planetX,planetY,planetScale*12.5) //second ring
 
-  strokeWeight (s/5)
-  circle (x,y,s*14)
+  strokeWeight (planetScale/5)
+  circle (planetX,planetY,planetScale*14) //third ring
 
-  strokeWeight (s/10)
-  circle (x,y,s*15.5)
+  strokeWeight (planetScale/10)
+  circle (planetX,planetY,planetScale*15.5) //outside ring
 }
 
 function cluster () {
