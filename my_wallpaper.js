@@ -2,10 +2,10 @@
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
- //pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  //pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -63,7 +63,7 @@ planetRadiate (40,80,1)
 
 cluster()
 
-
+ufo (105,135,40)
 }
 
 function star(starX,starY,starScale) {
@@ -136,9 +136,9 @@ circle (60, 0, 5) //small pink
 circle (110,200,5) //big
 
 
-
-
 stroke (255)
+strokeWeight (1)
+
 line (60, 0, 80, 30)
 line (80, 30, 140, 0)
 line (140, 0, 110, 60)
@@ -148,4 +148,56 @@ line (190, 200, 185, 140)
 //line (110,200, 150, 180)
 line (150, 180,70, 150)
 line (100, 161,185, 140)
+}
+
+function ufo(x,y,s) {
+noStroke()
+fill (153, 153, 153)
+beginShape() //top rombus
+vertex (x-s/2,y)
+vertex (x-s/4,y-s*0.15)
+vertex (x+s/4,y-s*0.15) 
+vertex (x+s/2,y)
+
+endShape()
+
+fill (99, 99, 99)
+beginShape() //bottom rombus
+vertex (x+s/2,y)
+vertex (x+s*0.15,y+s*0.15) 
+vertex (x-s*0.15,y+s*0.15)
+vertex (x-s/2,y) 
+
+endShape()
+
+strokeWeight(s*0.01)
+fill (201, 201, 201)
+stroke(153, 153, 153)
+arc (x,y-s*0.15,s/2,s/3.33,180,0) //top dome
+
+strokeWeight(s*0.02)
+stroke(153, 153, 153)
+line(x,y-s*0.3,x,y-s*0.4)
+
+stroke(99, 99, 99)
+arc (x,y+s*0.15,s/3.33,s/10,0,180)//bottom dome
+
+//windows left to right
+
+fill(255, 226, 158)
+stroke(255, 210, 84)
+
+
+circle (x-s*0.12,y-s*0.215,s*0.08)
+circle (x,y-s*0.215,s*0.08)
+circle (x+s*0.12,y-s*0.215,s*0.08)
+noFill()
+
+stroke(255)
+arc (x-s*0.12,y-s*0.215,s*0.03,s*0.04,160,270)
+arc (x,y-s*0.215,s*0.03,s*0.04,160,270)
+arc (x+s*0.12,y-s*0.215,s*0.03,s*0.03,160,270)
+
+
+
 }
