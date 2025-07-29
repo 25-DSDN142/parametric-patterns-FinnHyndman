@@ -2,10 +2,10 @@
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  //pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -19,21 +19,19 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
-//Grid()
-// star (x, y scale)
-//top left cluser
+//top left cluser (starX,starY,starScale)
 star(20,20,20)
 star(40,30,10)
 star(30,40,15)
 
-//bottom middle cluser
+//bottom middle cluster (starX,starY,starScale)
 star(60,185,25)
 star(40,190,15)
 
-//top right cluster
+//top right cluster (starX,starY,starScale)
 star(170,10,15)
 
-//random small stars
+//small stars (starX,starY,starScale)
 star(44, 38, 6);
 star(58, 42, 6);
 star(93, 21, 6);
@@ -59,15 +57,14 @@ planetRadiate (160,90,3)
 planetRadiate (60,110,2)
 planetRadiate (40,80,1)
 
-//planetRadiate (150,130,4)
-
 cluster()
 
-ufo (105,135,40)
+ufo (105,135,40)//(ufoX, ufoY, ufoScale)
 }
 
 function star(starX,starY,starScale) {
 
+//star colour becomes white if smaller than 9. 
   if( starScale > 9){
   fill (255, 238, 194)
   }
@@ -75,11 +72,11 @@ function star(starX,starY,starScale) {
   fill (255)
   }
   
-  //inside Star
+  //Star Inside
   stroke(24, 0, 41)
   square (starX-starScale/2,starY-starScale/2,starScale) 
 
-  //star indents
+  //Star Indents
   fill(24, 0, 41)
   beginShape() 
   stroke (32, 0, 54)
@@ -93,6 +90,7 @@ function star(starX,starY,starScale) {
 
 function planetRadiate(planetX,planetY,planetScale) {
 
+  //planet colour deep red if smaller than 3
   if( planetScale < 3){
   fill (207, 0, 0)
   }
@@ -150,53 +148,53 @@ line (150, 180,70, 150)
 line (100, 161,185, 140)
 }
 
-function ufo(x,y,s) {
+function ufo(ufoX,ufoY,ufoS) {
 noStroke()
-fill (153, 153, 153)
+fill (153, 153, 153) //light grey
 beginShape() //top rombus
-vertex (x-s/2,y)
-vertex (x-s/4,y-s*0.15)
-vertex (x+s/4,y-s*0.15) 
-vertex (x+s/2,y)
+vertex (ufoX-ufoS/2,ufoY)
+vertex (ufoX-ufoS/4,ufoY-ufoS*0.15)
+vertex (ufoX+ufoS/4,ufoY-ufoS*0.15) 
+vertex (ufoX+ufoS/2,ufoY)
 
 endShape()
 
-fill (99, 99, 99)
+fill (99, 99, 99) //dark grey
 beginShape() //bottom rombus
-vertex (x+s/2,y)
-vertex (x+s*0.15,y+s*0.15) 
-vertex (x-s*0.15,y+s*0.15)
-vertex (x-s/2,y) 
+vertex (ufoX+ufoS/2,ufoY)
+vertex (ufoX+ufoS*0.15,ufoY+ufoS*0.15) 
+vertex (ufoX-ufoS*0.15,ufoY+ufoS*0.15)
+vertex (ufoX-ufoS/2,ufoY) 
 
 endShape()
 
-strokeWeight(s*0.01)
+//top dome
+strokeWeight(ufoS*0.01)
 fill (201, 201, 201)
 stroke(153, 153, 153)
-arc (x,y-s*0.15,s/2,s/3.33,180,0) //top dome
+arc (ufoX,ufoY-ufoS*0.15,ufoS/2,ufoS/3.33,180,0) 
 
-strokeWeight(s*0.02)
+strokeWeight(ufoS*0.02) //arieal
 stroke(153, 153, 153)
-line(x,y-s*0.3,x,y-s*0.4)
+line(ufoX,ufoY-ufoS*0.3,ufoX,ufoY-ufoS*0.4)
 
+//bottom dome
 stroke(99, 99, 99)
-arc (x,y+s*0.15,s/3.33,s/10,0,180)//bottom dome
+arc (ufoX,ufoY+ufoS*0.15,ufoS/3.33,ufoS/10,0,180)
 
 //windows left to right
-
 fill(255, 226, 158)
 stroke(255, 210, 84)
-
-
-circle (x-s*0.12,y-s*0.215,s*0.08)
-circle (x,y-s*0.215,s*0.08)
-circle (x+s*0.12,y-s*0.215,s*0.08)
+circle (ufoX-ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.08)
+circle (ufoX,ufoY-ufoS*0.215,ufoS*0.08)
+circle (ufoX+ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.08)
 noFill()
 
+//window gleen
 stroke(255)
-arc (x-s*0.12,y-s*0.215,s*0.03,s*0.04,160,270)
-arc (x,y-s*0.215,s*0.03,s*0.04,160,270)
-arc (x+s*0.12,y-s*0.215,s*0.03,s*0.03,160,270)
+arc (ufoX-ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.04,160,270)
+arc (ufoX,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.04,160,270)
+arc (ufoX+ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.03,160,270)
 
 
 
