@@ -11,20 +11,21 @@ let colBlack = [255]
 //your parameter variables go here!
 let backgroundcolour = colBlue
 
-
+//star variables
 let StarClusterX = 30
 let StarClusterY = 30
 
+//planet variables
 let largePlanetColour = colPink
 let smallPlanetColour = colOrange
-let planetsizes = 3
+let planetsizes = 2
 let planetsX = 40
 let planetsY = 80
 
 
 let ufoX = 100
 let ufoY = 130
-let ufoScale = 40
+let ufoScale = 70
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -82,14 +83,15 @@ cluster()
 
 ufo (ufoX,ufoY,ufoScale)
 
+
 // Radiating Planet (planetX, planetY, planetScale)
 planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
 planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
   if (planetsizes > 2){
   hide (planetRadiate (planetsX,planetsY,planetsizes))
   }
-planetRadiate (planetsX,planetsY,planetsizes)
 
+ufo (ufoX,ufoY,ufoScale)
 }
 function star(starX,starY,starScale) {
 
