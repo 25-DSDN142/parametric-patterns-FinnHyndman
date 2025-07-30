@@ -1,7 +1,20 @@
-//your parameter variables go here!
-let trioStarClusterX = 30
-let trioStarClusterY = 30
+//pallet
+let colOrange = [227, 72, 30]
+let colRed = [207, 0, 0]
+let colYellow = [219, 176, 33]
+let colPink = [209, 13, 108]
+let colPurple = [24, 0, 41]
+let colBlue = [0, 17, 46]
+let colBlack = [255]
 
+
+//your parameter variables go here!
+let StarClusterX = 30
+let StarClusterY = 30
+let largePlanetColour = colPink
+let smallPlanetColour = colOrange
+let planetsizes = 1
+let backgroundcolour = colBlue
 
 
 function setup_wallpaper(pWallpaper) {
@@ -18,7 +31,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(24, 0, 41);
+  background(backgroundcolour);
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -52,15 +65,15 @@ star(40,190,15)
 star(170,10,15)
 
 //top left cluser (starX,starY,starScale)
-star(trioStarClusterX-10,trioStarClusterY-10,20)
-star(trioStarClusterX,trioStarClusterY+10,15)
-star(trioStarClusterX+10,trioStarClusterY,10)
+star(StarClusterX-10,StarClusterY-10,20)
+star(StarClusterX,StarClusterY+10,15)
+star(StarClusterX+10,StarClusterY,10)
 
 
 // Radiating Planet (planetX, planetY, planetScale)
-planetRadiate (160,90,3)
-planetRadiate (60,110,2)
-planetRadiate (40,80,1)
+planetRadiate (160,90,planetsizes+2)
+planetRadiate (60,110,planetsizes+1)
+planetRadiate (40,80,planetsizes)
 
 cluster()
 
@@ -78,13 +91,13 @@ function star(starX,starY,starScale) {
   }
   
   //Star Inside
-  stroke(24, 0, 41)
+  stroke(backgroundcolour)
   square (starX-starScale/2,starY-starScale/2,starScale) 
 
   //Star Indents
-  fill(24, 0, 41)
+  fill(backgroundcolour)
   beginShape() 
-  stroke (32, 0, 54)
+  stroke (backgroundcolour)
   strokeWeight (1)
   arc(starX-starScale/2, starY-starScale/2, starScale, starScale, 0, 90);
   arc(starX+starScale/2, starY-starScale/2, starScale, starScale, 90, 180);
@@ -97,10 +110,10 @@ function planetRadiate(planetX,planetY,planetScale) {
 
   //planet colour deep red if smaller than 3
   if( planetScale < 3){
-  fill (207, 0, 0)
+  fill (smallPlanetColour)
   }
   else{
-  fill (227, 72, 30)
+  fill (largePlanetColour)
   }
 
   noStroke ()
