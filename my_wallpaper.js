@@ -1,4 +1,8 @@
 //your parameter variables go here!
+let trioStarClusterX = 30
+let trioStarClusterY = 30
+
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -18,18 +22,6 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-
-//top left cluser (starX,starY,starScale)
-star(20,20,20)
-star(40,30,10)
-star(30,40,15)
-
-//bottom middle cluster (starX,starY,starScale)
-star(60,185,25)
-star(40,190,15)
-
-//top right cluster (starX,starY,starScale)
-star(170,10,15)
 
 //small stars (starX,starY,starScale)
 star(44, 38, 6);
@@ -51,6 +43,19 @@ star(190, 126, 6);
 star(91, 180, 6);
 star(176, 170, 6); 
 star(10, 157, 6);
+
+//bottom middle cluster (starX,starY,starScale)
+star(60,185,25)
+star(40,190,15)
+
+//top right cluster (starX,starY,starScale)
+star(170,10,15)
+
+//top left cluser (starX,starY,starScale)
+star(trioStarClusterX-10,trioStarClusterY-10,20)
+star(trioStarClusterX,trioStarClusterY+10,15)
+star(trioStarClusterX+10,trioStarClusterY,10)
+
 
 // Radiating Planet (planetX, planetY, planetScale)
 planetRadiate (160,90,3)
