@@ -17,7 +17,7 @@ let StarClusterY = 30
 
 let largePlanetColour = colPink
 let smallPlanetColour = colOrange
-let planetsizes = 2
+let planetsizes = 3
 
 
 let ufoX = 100
@@ -76,19 +76,18 @@ star(StarClusterX-10,StarClusterY-10,20)
 star(StarClusterX,StarClusterY+10,15)
 star(StarClusterX+10,StarClusterY,10)
 
+cluster()
+
+ufo (ufoX,ufoY,ufoScale)
 
 // Radiating Planet (planetX, planetY, planetScale)
 planetRadiate (160,90,planetsizes+2)
 planetRadiate (60,110,planetsizes+1)
-planetRadiate (40,80,planetsizes)
-
   if (planetsizes > 2){
   hide (planetRadiate (40,80,planetsizes))
-}
+  }
+planetRadiate (40,80,planetsizes)
 
-cluster()
-
-ufo (ufoX,ufoY,ufoScale)
 }
 function star(starX,starY,starScale) {
 
