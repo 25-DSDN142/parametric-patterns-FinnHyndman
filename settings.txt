@@ -10,22 +10,45 @@ Your final settings.txt will look something like this when you are finished:
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+//background variables
+let backgroundColour = colBlue
+let showAmbientStars = true
+
+//Trio star cluster variables
+let starClusterTrioX = 30
+let starClusterTrioY = 30
+
+//Duo star cluster variables
+let starClusterDuoX = 20
+let starClusterDuoY = 180
+
+//Planet variables
+let largePlanetColour = colPink
+let mediumPlanetColour = colYellow
+let smallPlanetColour = colOrange
+let planetsSize = 1
+let planetsX = 40
+let planetsY = 70
+
+//UFO variables
+let ufoShow = true
+let ufoX = 110
+let ufoY = 120
+let ufoSize = 30
+
+//Shift constellation horizontally
+let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  
+  pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 }
 
@@ -33,22 +56,87 @@ function setup_wallpaper(pWallpaper) {
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+//background variables
+let backgroundColour = colPurple
+let showAmbientStars = true
+
+//Trio star cluster variables
+let starClusterTrioX = 170
+let starClusterTrioY = 20
+
+//Duo star cluster variables
+let starClusterDuoX = 25
+let starClusterDuoY = 185
+
+//Planet variables
+let largePlanetColour = colOrange
+let mediumPlanetColour = colRed
+let smallPlanetColour = colPink
+let planetsSize = 2
+let planetsX = 20
+let planetsY = 100
+
+//UFO variables
+let ufoShow = true
+let ufoX = 55
+let ufoY = 80
+let ufoSize = 60
+
+//Shift constellation horizontally
+let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  
+  pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+
+Wallpaper 3:
+//background variables
+let backgroundColour = colBlack
+let showAmbientStars = true
+
+//Trio star cluster variables
+let starClusterTrioX = 170
+let starClusterTrioY = 20
+
+//Duo star cluster variables
+let starClusterDuoX = 120
+let starClusterDuoY = 185
+
+//Planet variables
+let largePlanetColour = colPink
+let mediumPlanetColour = colRed
+let smallPlanetColour = colPink
+let planetsSize = 8
+let planetsX = 0
+let planetsY = 90
+
+//UFO variables
+let ufoShow = true
+let ufoX =100
+let ufoY = 100
+let ufoSize =80
+
+//Shift constellation horizontally
+let constellationX = 40
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  
+  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
 }
