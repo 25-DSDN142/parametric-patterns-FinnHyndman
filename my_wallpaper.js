@@ -27,7 +27,7 @@ let ufoX = 100
 let ufoY = 130
 let ufoScale = 70
 
-let constellationX = 40
+let constellationX = 44
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -83,9 +83,9 @@ star(StarClusterX+10,StarClusterY,10)
 
 ufo (ufoX,ufoY,ufoScale)
 
-//if (constellationX > 40){
- // hide (constellation())
-
+ if (constellationX > 43 && constellationX < 107) {
+    constellation();
+  }
 
 // Radiating Planet (planetX, planetY, planetScale)
 planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
@@ -150,20 +150,20 @@ function planetRadiate(planetX,planetY,planetScale) {
   circle (planetX,planetY,planetScale*15.5) //outside ring
 }
 
-function constellation (constellationX) {
+function constellation () {
 
 fill (255)
 circle (constellationX-20, 30, 5) //a
 circle (constellationX+10, 60, 5)//b
 circle (constellationX+85, 140, 5)//c
 circle (constellationX+50, 180, 5)//d
-circle (constellationX, 161, 5)//e
+circle (constellationX,161, 5)//e
 circle (constellationX-30, 150, 5)//f
 
 circle (constellationX+90, 200, 5) //small cyan
 circle (constellationX+40, 0, 5) //big
 circle (constellationX-40, 0, 5) //small pink
-circle (constellationX+10,200,5) //big
+//circle (constellationX+10,200,5) //big
 
 stroke (255)
 strokeWeight (1)
