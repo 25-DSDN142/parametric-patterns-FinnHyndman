@@ -15,10 +15,12 @@ let backgroundColour = colBlue
 let showAmbientStars = true
 
 //Trio star cluster variables
+let starClusterTrioShow = true
 let starClusterTrioX = 30
 let starClusterTrioY = 30
 
 //Duo star cluster variables
+let starClusterDuoShow = true
 let starClusterDuoX = 20
 let starClusterDuoY = 180
 
@@ -104,10 +106,12 @@ let backgroundColour = colBlack
 let showAmbientStars = true
 
 //Trio star cluster variables
+let starClusterTrioShow = true
 let starClusterTrioX = 170
 let starClusterTrioY = 20
 
 //Duo star cluster variables
+let starClusterDuoShow = true
 let starClusterDuoX = 120
 let starClusterDuoY = 185
 
