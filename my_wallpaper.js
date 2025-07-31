@@ -10,39 +10,40 @@ let colBlack = [0,0,0]
 //your parameter variables go here!
 
 //background variables
-let backgroundColour = colBlue
+let backgroundColour = colPurple
 let showAmbientStars = true
 
 //Trio star cluster variables
-let starClusterTrioX = 30
-let starClusterTrioY = 30
+let starClusterTrioX = 190
+let starClusterTrioY = 20
 
 //Duo star cluster variables
-let starClusterDuoX = 20
-let starClusterDuoY = 180
+let starClusterDuoX = 25
+let starClusterDuoY = 185
 
 //Planet variables
-let largePlanetColour = colPink
-let mediumPlanetColour = colYellow
-let smallPlanetColour = colOrange
-let planetsSize = 1
-let planetsX = 40
-let planetsY = 70
+let largePlanetColour = colOrange
+let mediumPlanetColour = colRed
+let smallPlanetColour = colPink
+let planetsSize = 2
+let planetsX = 20
+let planetsY = 100
 
 //UFO variables
-let ufoX = 110
-let ufoY = 120
-let ufoSize = 30
+let ufoShow = true
+let ufoX = 55
+let ufoY = 80
+let ufoSize = 60
 
 //Shift constellation horizontally
 let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -103,7 +104,9 @@ planetRadiate(planetsX+100,planetsY+10,planetsSize+2)
 }
 
 //UFO draw
+if (ufoShow === true){
 ufo(ufoX,ufoY,ufoSize)
+}
 }
 
 function star(starX,starY,starScale) {
