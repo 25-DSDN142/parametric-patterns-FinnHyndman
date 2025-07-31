@@ -27,6 +27,8 @@ let ufoX = 100
 let ufoY = 130
 let ufoScale = 70
 
+let constellationX = 40
+
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -79,9 +81,10 @@ star(StarClusterX-10,StarClusterY-10,20)
 star(StarClusterX,StarClusterY+10,15)
 star(StarClusterX+10,StarClusterY,10)
 
-cluster()
-
 ufo (ufoX,ufoY,ufoScale)
+
+//if (constellationX > 40){
+ // hide (constellation())
 
 
 // Radiating Planet (planetX, planetY, planetScale)
@@ -90,9 +93,9 @@ planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
   if (planetsizes > 2){
   hide (planetRadiate (planetsX,planetsY,planetsizes))
   }
-
-ufo (ufoX,ufoY,ufoScale)
 }
+
+
 function star(starX,starY,starScale) {
 
 //star colour becomes white if smaller than 9. 
@@ -147,36 +150,33 @@ function planetRadiate(planetX,planetY,planetScale) {
   circle (planetX,planetY,planetScale*15.5) //outside ring
 }
 
-function cluster () {
-
-
+function constellation (constellationX) {
 
 fill (255)
-circle (80, 30, 5) //a
-circle (110, 60, 5)//b
-circle (185, 140, 5)//c
-circle (150, 180, 5)//d
-circle (100, 161, 5)//e
-circle (70, 150, 5)//f
+circle (constellationX-20, 30, 5) //a
+circle (constellationX+10, 60, 5)//b
+circle (constellationX+85, 140, 5)//c
+circle (constellationX+50, 180, 5)//d
+circle (constellationX, 161, 5)//e
+circle (constellationX-30, 150, 5)//f
 
-circle (190, 200, 5) //small cyan
-circle (140, 0, 5) //big
-circle (60, 0, 5) //small pink
-circle (110,200,5) //big
-
+circle (constellationX+90, 200, 5) //small cyan
+circle (constellationX+40, 0, 5) //big
+circle (constellationX-40, 0, 5) //small pink
+circle (constellationX+10,200,5) //big
 
 stroke (255)
 strokeWeight (1)
 
-line (60, 0, 80, 30)
-line (80, 30, 140, 0)
-line (140, 0, 110, 60)
+line (constellationX-40, 0, constellationX-20, 30)
+line (constellationX-20, 30, constellationX+40, 0)
+line (constellationX+40, 0, constellationX+10, 60)
 
-line (190, 200, 185, 140)
+line (constellationX+90, 200, constellationX+85, 140)
 
 //line (110,200, 150, 180)
-line (150, 180,70, 150)
-line (100, 161,185, 140)
+line (constellationX+50, 180,constellationX-30, 150)
+line (constellationX, 161,constellationX+85, 140)
 }
 
 function ufo(ufoX,ufoY,ufoS) {
