@@ -25,18 +25,17 @@ let StarClusterDuoY = 180
 let largePlanetColour = colPink
 let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
-let planetsizes = 1
+let planetsizes = 4
 let planetsX = 40
 let planetsY = 70
 
 //UFO Variables
 let ufoX = 100
-let ufoY = 130
+let ufoY = 120
 let ufoScale = 70
 
 //shift constellation
 let constellationX = 90
-
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -56,7 +55,6 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-
 
 //small stars (starX,starY,starScale)
 
@@ -93,15 +91,19 @@ star(StarClusterTrioX+10,StarClusterTrioY,10)
 
 // Radiating Planet Draw 
 planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
-planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
   if (planetsizes < 2){
-  (planetRadiate (planetsX,planetsY,planetsizes))
+  (planetRadiate (planetsX,planetsY,planetsizes))}
+
+  if (planetsizes < 4){
+  planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
   }
 
-// UFO Draw 
+// Constellation Draw 
  if (constellationX > 43 && constellationX < 107) {
-    constellation();
-  }
+    constellation(); 
+}
+
+ufo(ufoX,ufoY,ufoScale)
 }
 
 
@@ -134,11 +136,11 @@ function star(starX,starY,starScale) {
 function planetRadiate(planetX,planetY,planetScale) {
 
   //planet colour deep red if smaller than 3
-  if (planetScale <= 1) {
+  if (planetScale < 2) {
   fill(smallPlanetColour);
-} else if (planetScale <= 2) {
+} else if (planetScale >= 2 && planetScale < 3) {
   fill(mediumPlanetColour);
-} else if (planetScale <= 3) {
+} else if (planetScale >= 3) {
   fill(largePlanetColour);
   }
 
