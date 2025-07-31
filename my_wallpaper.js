@@ -7,27 +7,34 @@ let colPurple = [24, 0, 41]
 let colBlue = [0, 17, 46]
 let colBlack = [255]
 
-
 //your parameter variables go here!
 let backgroundcolour = colBlue
 
-//star variables
-let StarClusterX = 30
-let StarClusterY = 30
+//Trio Star Cluster variables
+let StarClusterTrioX = 30
+let StarClusterTrioY = 30
 
-//planet variables
+//Duo Star Cluster variables
+let StarClusterDuoX = 20
+let StarClusterDuoY = 180
+
+//Planet variables
 let largePlanetColour = colPink
 let smallPlanetColour = colOrange
-let planetsizes = 2
+let planetsizes = 1.9
 let planetsX = 40
-let planetsY = 80
+let planetsY = 70
 
-
+//UFO Variables
 let ufoX = 100
 let ufoY = 130
 let ufoScale = 70
 
-let constellationX = 44
+//shift constellation
+let constellationX = 90
+
+let showAmbientStars = true
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -48,7 +55,10 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+
 //small stars (starX,starY,starScale)
+
+if (showAmbientStars === true){
 star(44, 38, 6);
 star(58, 42, 6);
 star(93, 21, 6);
@@ -68,30 +78,27 @@ star(190, 126, 6);
 star(91, 180, 6);
 star(176, 170, 6); 
 star(10, 157, 6);
+}
 
-//bottom middle cluster (starX,starY,starScale)
-star(60,185,25)
-star(40,190,15)
+//bottom middle star cluster Draw
+star(StarClusterDuoX+20,StarClusterDuoY,25)
+star(StarClusterDuoX,StarClusterDuoY+5,15)
 
-//top right cluster (starX,starY,starScale)
-star(170,10,15)
+//top left star cluster Draw
+star(StarClusterTrioX-10,StarClusterTrioY-10,20)
+star(StarClusterTrioX,StarClusterTrioY+10,15)
+star(StarClusterTrioX+10,StarClusterTrioY,10)
 
-//top left cluser (starX,starY,starScale)
-star(StarClusterX-10,StarClusterY-10,20)
-star(StarClusterX,StarClusterY+10,15)
-star(StarClusterX+10,StarClusterY,10)
-
-ufo (ufoX,ufoY,ufoScale)
-
- if (constellationX > 43 && constellationX < 107) {
-    constellation();
-  }
-
-// Radiating Planet (planetX, planetY, planetScale)
+// Radiating Planet Draw 
 planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
 planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
-  if (planetsizes > 2){
-  hide (planetRadiate (planetsX,planetsY,planetsizes))
+  if (planetsizes < 2){
+  (planetRadiate (planetsX,planetsY,planetsizes))
+  }
+
+// UFO Draw 
+ if (constellationX > 43 && constellationX < 107) {
+    constellation();
   }
 }
 
