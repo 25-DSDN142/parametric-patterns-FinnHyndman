@@ -6,31 +6,35 @@ let colPink = [209, 13, 108]
 let colPurple = [24, 0, 41]
 let colBlue = [0, 17, 46]
 let colBlack = [0,0,0]
+let colWhite = [255,255,255]
 
 //your parameter variables go here!
 
 //background variables
-let backgroundColour = colPurple
+let backgroundColour = colBlue
 let showAmbientStars = true
 
 //Trio star cluster variables
-let starClusterTrioX = 190
+let starClusterTrioShow = false
+let starClusterTrioX = 170
 let starClusterTrioY = 20
 
 //Duo star cluster variables
+let starClusterDuoShow = false
 let starClusterDuoX = 25
 let starClusterDuoY = 185
 
 //Planet variables
-let largePlanetColour = colOrange
-let mediumPlanetColour = colRed
-let smallPlanetColour = colPink
+let planetsShow = true
+let largePlanetColour = colWhite
+let mediumPlanetColour = colWhite
+let smallPlanetColour = colWhite
 let planetsSize = 2
-let planetsX = 20
-let planetsY = 100
+let planetsX = 90
+let planetsY = 70
 
 //UFO variables
-let ufoShow = true
+let ufoShow = false
 let ufoX = 55
 let ufoY = 80
 let ufoSize = 60
@@ -81,15 +85,22 @@ star(10, 157, 6);
 }
 
 //Duo Star Cluster Draw
+if (starClusterDuoShow === true){
 star(starClusterDuoX+20,starClusterDuoY,25)
 star(starClusterDuoX,starClusterDuoY+5,15)
+}
 
 //Trio Star Cluster Draw
+if (starClusterTrioShow === true){
 star(starClusterTrioX-10,starClusterTrioY-10,20)
 star(starClusterTrioX,starClusterTrioY+10,15)
 star(starClusterTrioX+10,starClusterTrioY,10)
+}
 
 // Radiating Planet Draw 
+if (planetsShow === true){
+
+//let planetsSize = int(random(0, 2)); // Random size: 0,1 or 2,
 planetRadiate(planetsX+100,planetsY+10,planetsSize+2)
   if (planetsSize < 2){
   planetRadiate(planetsX,planetsY,planetsSize)}
@@ -97,7 +108,7 @@ planetRadiate(planetsX+100,planetsY+10,planetsSize+2)
   if (planetsSize < 4){
   planetRadiate(planetsX+20,planetsY+40,planetsSize+1)
   }
-
+}
 // Constellation Draw 
  if (constellationX > 43 && constellationX < 107) {
     constellation(); 
