@@ -11,7 +11,7 @@ let colWhite = [255,255,255]
 //your parameter variables go here!
 
 //background variables
-let backgroundColour = colBlue
+let backgroundColour = colBlack
 let showAmbientStars = true
 
 //Trio star cluster variables
@@ -26,15 +26,16 @@ let starClusterDuoY = 185
 
 //Planet variables
 let planetsShow = true
-let largePlanetColour = colWhite
+let largePlanetColour = colBlue
 let mediumPlanetColour = colWhite
 let smallPlanetColour = colWhite
+let planetRingColour = colPink
 let planetsSize = 2
 let planetsX = 90
 let planetsY = 70
 
 //UFO variables
-let ufoShow = false
+let ufoShow = true
 let ufoX = 55
 let ufoY = 80
 let ufoSize = 60
@@ -159,7 +160,7 @@ function planetRadiate(planetX,planetY,planetScale) {
   circle (planetX,planetY,planetScale*10) //center planet
 
   noFill ()
-  stroke (255)
+  stroke (planetRingColour)
   strokeWeight (planetScale/2.5)
   circle (planetX,planetY,planetScale*11) //first ring
 
