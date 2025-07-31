@@ -5,12 +5,12 @@ let colYellow = [219, 176, 33]
 let colPink = [209, 13, 108]
 let colPurple = [24, 0, 41]
 let colBlue = [0, 17, 46]
-let colBlack = [255]
+let colBlack = [0,0,0]
 
 //your parameter variables go here!
 
 //background varibales
-let backgroundcolour = colBlue
+let backgroundcolour = colPurple
 let showAmbientStars = true
 
 //Trio Star Cluster variables
@@ -25,24 +25,24 @@ let StarClusterDuoY = 180
 let largePlanetColour = colPink
 let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
-let planetsizes = 4
+let planetsizes = 1
 let planetsX = 40
 let planetsY = 70
 
 //UFO Variables
-let ufoX = 100
+let ufoX = 110
 let ufoY = 120
-let ufoScale = 70
+let ufoScale = 30
 
 //shift constellation
-let constellationX = 90
+let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  //pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -103,9 +103,9 @@ planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
     constellation(); 
 }
 
+//UFO draw
 ufo(ufoX,ufoY,ufoScale)
 }
-
 
 function star(starX,starY,starScale) {
 
