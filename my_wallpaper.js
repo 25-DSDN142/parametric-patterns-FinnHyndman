@@ -1,4 +1,4 @@
-//pallet
+//palette
 let colOrange = [227, 72, 30]
 let colRed = [207, 0, 0]
 let colYellow = [219, 176, 33]
@@ -9,15 +9,15 @@ let colBlack = [0,0,0]
 
 //your parameter variables go here!
 
-//background varibales
-let backGroundColour = colBlue
+//background variables
+let backgroundColour = colBlue
 let showAmbientStars = true
 
-//Trio Star Cluster variables
+//Trio star cluster variables
 let starClusterTrioX = 30
 let starClusterTrioY = 30
 
-//Duo Star Cluster variables
+//Duo star cluster variables
 let starClusterDuoX = 20
 let starClusterDuoY = 180
 
@@ -25,16 +25,16 @@ let starClusterDuoY = 180
 let largePlanetColour = colPink
 let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
-let planetSizes = 1
+let planetsSize = 1
 let planetsX = 40
 let planetsY = 70
 
-//UFO Variables
+//UFO variables
 let ufoX = 110
 let ufoY = 120
-let ufoScale = 30
+let ufoSize = 30
 
-//Shift Constellation Horizontally
+//Shift constellation horizontally
 let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
@@ -51,7 +51,7 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(backGroundColour);
+  background(backgroundColour);
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
@@ -89,12 +89,12 @@ star(starClusterTrioX,starClusterTrioY+10,15)
 star(starClusterTrioX+10,starClusterTrioY,10)
 
 // Radiating Planet Draw 
-planetRadiate (planetsX+100,planetsY+10,planetSizes+2)
-  if (planetSizes < 2){
-  (planetRadiate (planetsX,planetsY,planetSizes))}
+planetRadiate(planetsX+100,planetsY+10,planetsSize+2)
+  if (planetsSize < 2){
+  planetRadiate(planetsX,planetsY,planetsSize)}
 
-  if (planetSizes < 4){
-  planetRadiate (planetsX+20,planetsY+40,planetSizes+1)
+  if (planetsSize < 4){
+  planetRadiate(planetsX+20,planetsY+40,planetsSize+1)
   }
 
 // Constellation Draw 
@@ -103,7 +103,7 @@ planetRadiate (planetsX+100,planetsY+10,planetSizes+2)
 }
 
 //UFO draw
-ufo(ufoX,ufoY,ufoScale)
+ufo(ufoX,ufoY,ufoSize)
 }
 
 function star(starX,starY,starScale) {
@@ -116,13 +116,13 @@ function star(starX,starY,starScale) {
   }
   
   //Star Inside
-  stroke(backGroundColour)
+  stroke(backgroundColour)
   square (starX-starScale/2,starY-starScale/2,starScale) 
 
   //Star Indents
-  fill(backGroundColour)
+  fill(backgroundColour)
   beginShape() 
-  stroke (backGroundColour)
+  stroke (backgroundColour)
   strokeWeight (1)
   arc(starX-starScale/2, starY-starScale/2, starScale, starScale, 0, 90);
   arc(starX+starScale/2, starY-starScale/2, starScale, starScale, 90, 180);
@@ -185,54 +185,48 @@ line (constellationX+90, 200, constellationX+85, 140) // d-h
 
 }
 
-function ufo(ufoX,ufoY,ufoS) {
+function ufo(ufoX,ufoY,ufoScale) {
 noStroke()
 fill (153, 153, 153) //light grey
-beginShape() //top rombus
-vertex (ufoX-ufoS/2,ufoY)
-vertex (ufoX-ufoS/4,ufoY-ufoS*0.15)
-vertex (ufoX+ufoS/4,ufoY-ufoS*0.15) 
-vertex (ufoX+ufoS/2,ufoY)
+beginShape() //Top rombus
+vertex (ufoX-ufoScale/2,ufoY)
+vertex (ufoX-ufoScale/4,ufoY-ufoScale*0.15)
+vertex (ufoX+ufoScale/4,ufoY-ufoScale*0.15) 
+vertex (ufoX+ufoScale/2,ufoY)
 
 endShape()
 
 fill (99, 99, 99) //dark grey
-beginShape() //bottom rombus
-vertex (ufoX+ufoS/2,ufoY)
-vertex (ufoX+ufoS*0.15,ufoY+ufoS*0.15) 
-vertex (ufoX-ufoS*0.15,ufoY+ufoS*0.15)
-vertex (ufoX-ufoS/2,ufoY) 
+beginShape() //Bottom rombus
+vertex (ufoX+ufoScale/2,ufoY)
+vertex (ufoX+ufoScale*0.15,ufoY+ufoScale*0.15) 
+vertex (ufoX-ufoScale*0.15,ufoY+ufoScale*0.15)
+vertex (ufoX-ufoScale/2,ufoY) 
 
 endShape()
 
-//top dome
-strokeWeight(ufoS*0.01)
+strokeWeight(ufoScale*0.01)//top dome
 fill (201, 201, 201)
 stroke(153, 153, 153)
-arc (ufoX,ufoY-ufoS*0.15,ufoS/2,ufoS/3.33,180,0) 
+arc (ufoX,ufoY-ufoScale*0.15,ufoScale/2,ufoScale/3.33,180,0) 
 
-strokeWeight(ufoS*0.02) //arieal
+strokeWeight(ufoScale*0.02) //arieal
 stroke(153, 153, 153)
-line(ufoX,ufoY-ufoS*0.3,ufoX,ufoY-ufoS*0.4)
+line(ufoX,ufoY-ufoScale*0.3,ufoX,ufoY-ufoScale*0.4)
 
-//bottom dome
-stroke(99, 99, 99)
-arc (ufoX,ufoY+ufoS*0.15,ufoS/3.33,ufoS/10,0,180)
+stroke(99, 99, 99) //bottom dome
+arc (ufoX,ufoY+ufoScale*0.15,ufoScale/3.33,ufoScale/10,0,180)
 
-//windows left to right
-fill(255, 226, 158)
+fill(255, 226, 158) //windows left to right
 stroke(255, 210, 84)
-circle (ufoX-ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.08)
-circle (ufoX,ufoY-ufoS*0.215,ufoS*0.08)
-circle (ufoX+ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.08)
+circle (ufoX-ufoScale*0.12,ufoY-ufoScale*0.215,ufoScale*0.08)
+circle (ufoX,ufoY-ufoScale*0.215,ufoScale*0.08)
+circle (ufoX+ufoScale*0.12,ufoY-ufoScale*0.215,ufoScale*0.08)
 noFill()
 
-//window gleen
-stroke(255)
-arc (ufoX-ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.04,160,270)
-arc (ufoX,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.04,160,270)
-arc (ufoX+ufoS*0.12,ufoY-ufoS*0.215,ufoS*0.03,ufoS*0.03,160,270)
-
-
+stroke(255) //window gleam left to right
+arc (ufoX-ufoScale*0.12,ufoY-ufoScale*0.215,ufoScale*0.03,ufoScale*0.04,160,270)
+arc (ufoX,ufoY-ufoScale*0.215,ufoScale*0.03,ufoScale*0.04,160,270)
+arc (ufoX+ufoScale*0.12,ufoY-ufoScale*0.215,ufoScale*0.03,ufoScale*0.03,160,270)
 
 }
