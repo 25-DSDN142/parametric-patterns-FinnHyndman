@@ -8,7 +8,10 @@ let colBlue = [0, 17, 46]
 let colBlack = [255]
 
 //your parameter variables go here!
+
+//background varibales
 let backgroundcolour = colBlue
+let showAmbientStars = true
 
 //Trio Star Cluster variables
 let StarClusterTrioX = 30
@@ -20,8 +23,9 @@ let StarClusterDuoY = 180
 
 //Planet variables
 let largePlanetColour = colPink
+let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
-let planetsizes = 1.9
+let planetsizes = 1
 let planetsX = 40
 let planetsY = 70
 
@@ -32,8 +36,6 @@ let ufoScale = 70
 
 //shift constellation
 let constellationX = 90
-
-let showAmbientStars = true
 
 
 function setup_wallpaper(pWallpaper) {
@@ -132,11 +134,12 @@ function star(starX,starY,starScale) {
 function planetRadiate(planetX,planetY,planetScale) {
 
   //planet colour deep red if smaller than 3
-  if( planetScale < 3){
-  fill (smallPlanetColour)
-  }
-  else{
-  fill (largePlanetColour)
+  if (planetScale <= 1) {
+  fill(smallPlanetColour);
+} else if (planetScale <= 2) {
+  fill(mediumPlanetColour);
+} else if (planetScale <= 3) {
+  fill(largePlanetColour);
   }
 
   noStroke ()
