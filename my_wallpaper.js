@@ -10,22 +10,22 @@ let colBlack = [0,0,0]
 //your parameter variables go here!
 
 //background varibales
-let backgroundcolour = colPurple
+let backGroundColour = colBlue
 let showAmbientStars = true
 
 //Trio Star Cluster variables
-let StarClusterTrioX = 30
-let StarClusterTrioY = 30
+let starClusterTrioX = 30
+let starClusterTrioY = 30
 
 //Duo Star Cluster variables
-let StarClusterDuoX = 20
-let StarClusterDuoY = 180
+let starClusterDuoX = 20
+let starClusterDuoY = 180
 
 //Planet variables
 let largePlanetColour = colPink
 let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
-let planetsizes = 1
+let planetSizes = 1
 let planetsX = 40
 let planetsY = 70
 
@@ -34,15 +34,15 @@ let ufoX = 110
 let ufoY = 120
 let ufoScale = 30
 
-//shift constellation
+//Shift Constellation Horizontally
 let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  //pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -51,13 +51,12 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-  background(backgroundcolour);
+  background(backGroundColour);
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-
+  
 //small stars (starX,starY,starScale)
-
 if (showAmbientStars === true){
 star(44, 38, 6);
 star(58, 42, 6);
@@ -80,22 +79,22 @@ star(176, 170, 6);
 star(10, 157, 6);
 }
 
-//bottom middle star cluster Draw
-star(StarClusterDuoX+20,StarClusterDuoY,25)
-star(StarClusterDuoX,StarClusterDuoY+5,15)
+//Duo Star Cluster Draw
+star(starClusterDuoX+20,starClusterDuoY,25)
+star(starClusterDuoX,starClusterDuoY+5,15)
 
-//top left star cluster Draw
-star(StarClusterTrioX-10,StarClusterTrioY-10,20)
-star(StarClusterTrioX,StarClusterTrioY+10,15)
-star(StarClusterTrioX+10,StarClusterTrioY,10)
+//Trio Star Cluster Draw
+star(starClusterTrioX-10,starClusterTrioY-10,20)
+star(starClusterTrioX,starClusterTrioY+10,15)
+star(starClusterTrioX+10,starClusterTrioY,10)
 
 // Radiating Planet Draw 
-planetRadiate (planetsX+100,planetsY+10,planetsizes+2)
-  if (planetsizes < 2){
-  (planetRadiate (planetsX,planetsY,planetsizes))}
+planetRadiate (planetsX+100,planetsY+10,planetSizes+2)
+  if (planetSizes < 2){
+  (planetRadiate (planetsX,planetsY,planetSizes))}
 
-  if (planetsizes < 4){
-  planetRadiate (planetsX+20,planetsY+40,planetsizes+1)
+  if (planetSizes < 4){
+  planetRadiate (planetsX+20,planetsY+40,planetSizes+1)
   }
 
 // Constellation Draw 
@@ -108,7 +107,6 @@ ufo(ufoX,ufoY,ufoScale)
 }
 
 function star(starX,starY,starScale) {
-
 //star colour becomes white if smaller than 9. 
   if( starScale > 9){
   fill (255, 238, 194)
@@ -118,13 +116,13 @@ function star(starX,starY,starScale) {
   }
   
   //Star Inside
-  stroke(backgroundcolour)
+  stroke(backGroundColour)
   square (starX-starScale/2,starY-starScale/2,starScale) 
 
   //Star Indents
-  fill(backgroundcolour)
+  fill(backGroundColour)
   beginShape() 
-  stroke (backgroundcolour)
+  stroke (backGroundColour)
   strokeWeight (1)
   arc(starX-starScale/2, starY-starScale/2, starScale, starScale, 0, 90);
   arc(starX+starScale/2, starY-starScale/2, starScale, starScale, 90, 180);
@@ -134,8 +132,7 @@ function star(starX,starY,starScale) {
 }
 
 function planetRadiate(planetX,planetY,planetScale) {
-
-  //planet colour deep red if smaller than 3
+//colour determined based on scale.
   if (planetScale < 2) {
   fill(smallPlanetColour);
 } else if (planetScale >= 2 && planetScale < 3) {
@@ -165,30 +162,27 @@ function planetRadiate(planetX,planetY,planetScale) {
 function constellation () {
 
 fill (255)
-circle (constellationX-20, 30, 5) //a
-circle (constellationX+10, 60, 5)//b
-circle (constellationX+85, 140, 5)//c
-circle (constellationX+50, 180, 5)//d
-circle (constellationX,161, 5)//e
-circle (constellationX-30, 150, 5)//f
-
-circle (constellationX+90, 200, 5) //small cyan
-circle (constellationX+40, 0, 5) //big
-circle (constellationX-40, 0, 5) //small pink
-//circle (constellationX+10,200,5) //big
+// from far left, top to far right, bottom
+circle(constellationX - 40, 0, 5)  //a 
+circle(constellationX - 30, 150, 5) //b
+circle(constellationX - 20, 30, 5) //c
+circle(constellationX, 161, 5) // d
+circle(constellationX + 10, 60, 5) //e
+circle(constellationX + 40, 0, 5) //f
+circle(constellationX + 50, 180, 5) // g
+circle(constellationX + 85, 140, 5)// h
+circle(constellationX + 90, 200, 5) // i 
 
 stroke (255)
 strokeWeight (1)
 
-line (constellationX-40, 0, constellationX-20, 30)
-line (constellationX-20, 30, constellationX+40, 0)
-line (constellationX+40, 0, constellationX+10, 60)
+line (constellationX-40, 0, constellationX-20, 30) //a-c
+line (constellationX-20, 30, constellationX+40, 0) //c-f
+line (constellationX+40, 0, constellationX+10, 60) //f-e
+line (constellationX, 161,constellationX+85, 140) //i - h
+line (constellationX+50, 180,constellationX-30, 150) //g-b
+line (constellationX+90, 200, constellationX+85, 140) // d-h 
 
-line (constellationX+90, 200, constellationX+85, 140)
-
-//line (110,200, 150, 180)
-line (constellationX+50, 180,constellationX-30, 150)
-line (constellationX, 161,constellationX+85, 140)
 }
 
 function ufo(ufoX,ufoY,ufoS) {
