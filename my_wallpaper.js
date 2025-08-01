@@ -13,40 +13,40 @@ let colWhite = [255,255,255]
 //your parameter variables go here!
 
 //background variables
-let backgroundColour = colBlue
-let showAmbientStars = false
+let backgroundColour = colYellow
+let showAmbientStars = true
 
 //star cluster colours
-let starClustersColour = colWhite
+let starClustersColour = colBlack
 
 //Trio star cluster variables
 let starClusterTrioShow = true
-let starClusterTrioX = 120
-let starClusterTrioY = 100
+let starClusterTrioX = 150
+let starClusterTrioY = 20
 
 //Duo star cluster variables
 let starClusterDuoShow = true
-let starClusterDuoX = 80
+let starClusterDuoX = 40
 let starClusterDuoY = 115
 
 //Planet variables
 let planetsShow = true
-let largePlanetColour = colOrange
-let mediumPlanetColour = colRed
-let smallPlanetColour = colYellow
-let planetRingColour = colYellow
-let planetsSize = 5
-let planetsX = 10
-let planetsY = 0
+let largePlanetColour = colBlack
+let mediumPlanetColour = colBlack
+let smallPlanetColour = colBlack
+let planetRingColour = colBlack
+let planetsSize = 1
+let planetsX = 90
+let planetsY = 60
 
 //UFO variables
-let ufoShow = true
+let ufoShow = false
 let ufoX = 55
 let ufoY = 120
 let ufoSize = 50
 
-//Shift constellation horizontally
-let constellationX = 190
+//Shift constellation horizontally (will only show when set between 44 and 106)
+let constellationX = 90
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
