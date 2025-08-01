@@ -12,46 +12,46 @@ let colWhite = [255,255,255]
 
 //your parameter variables go here!
 //background variables
-let backgroundColour = colYellow
+let backgroundColour = colBlack
 let showAmbientStars = true
 
 //star cluster colours
-let starClustersColour = colBlack
+let starClustersColour = colLightYellow
 
 //Trio star cluster variables
-let starClusterTrioShow = true
-let starClusterTrioX = 150
-let starClusterTrioY = 110
+let starClusterTrioShow = false
+let starClusterTrioX = 170
+let starClusterTrioY = 20
 
 //Duo star cluster variables
-let starClusterDuoShow = true
-let starClusterDuoX = 10
-let starClusterDuoY = 130
+let starClusterDuoShow = false
+let starClusterDuoX = 25
+let starClusterDuoY = 185
 
 //Planet variables
 let planetsShow = true
 let largePlanetColour = colBlack
-let mediumPlanetColour = colBlack
-let smallPlanetColour = colBlack
+let mediumPlanetColour = colRed
+let smallPlanetColour = colPink
 let planetRingColour = colWhite
-let planetsSize = 1.9
-let planetsX = 60
-let planetsY = 50
+let planetsSize = 4
+let planetsX = 90
+let planetsY = 70
 
 //UFO variables
 let ufoShow = false
 let ufoX = 55
-let ufoY = 120
-let ufoSize = 50
+let ufoY = 80
+let ufoSize = 60
 
-//Shift constellation horizontally (will only show when set between 44 and 106)
-let constellationX = 70
+//Shift constellation horizontally
+let constellationX = 100
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
