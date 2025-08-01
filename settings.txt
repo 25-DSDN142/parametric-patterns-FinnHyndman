@@ -425,28 +425,28 @@ function setup_wallpaper(pWallpaper) {
 /////////////////////////////////
 
 Wallpaper 9
-  //background variables
-let backgroundColour = colPurple
+//background variables
+let backgroundColour = colYellow
 let showAmbientStars = true
 
 //star cluster colours
-let starClustersColour = colWhite
+let starClustersColour = colBlack
 
 //Trio star cluster variables
 let starClusterTrioShow = true
 let starClusterTrioX = 150
-let starClusterTrioY = 180
+let starClusterTrioY = 110
 
 //Duo star cluster variables
 let starClusterDuoShow = true
 let starClusterDuoX = 10
-let starClusterDuoY = 140
+let starClusterDuoY = 130
 
 //Planet variables
 let planetsShow = true
 let largePlanetColour = colBlack
 let mediumPlanetColour = colBlack
-let smallPlanetColour = colWhite
+let smallPlanetColour = colBlack
 let planetRingColour = colWhite
 let planetsSize = 1.9
 let planetsX = 60
@@ -459,7 +459,7 @@ let ufoY = 120
 let ufoSize = 50
 
 //Shift constellation horizontally (will only show when set between 44 and 106)
-let constellationX = 0
+let constellationX = 70
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
