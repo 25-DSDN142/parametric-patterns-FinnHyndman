@@ -105,7 +105,6 @@ star(starClusterTrioX+10,starClusterTrioY,10)
 // Radiating Planet Draw 
 if (planetsShow === true){
 
-//let planetsSize = int(random(0, 2)); // Random size: 0,1 or 2,
 planetRadiate(planetsX+100,planetsY+10,planetsSize+2)
   if (planetsSize < 2){
   planetRadiate(planetsX,planetsY,planetsSize)}
