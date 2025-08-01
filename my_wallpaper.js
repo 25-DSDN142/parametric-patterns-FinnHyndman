@@ -12,7 +12,7 @@ let colWhite = [255,255,255]
 
 //your parameter variables go here!
 //background variables
-let backgroundColour = colYellow
+let backgroundColour = colBlue
 let showAmbientStars = true
 
 //star cluster colours
