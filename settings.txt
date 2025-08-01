@@ -7,17 +7,15 @@ Your final settings.txt will look something like this when you are finished:
 
 /////////////////////////////////
 
-let colLightYellow = [255, 238, 194]
-let colGreen = [0, 17, 46]
-let starClustersColour = colBlue
-
-
 Wallpaper 1:
 
 //your parameter variables go here!
 //background variables
 let backgroundColour = colBlue
 let showAmbientStars = true
+
+//star cluster colours
+let starClustersColour = colLightYellow
 
 //Trio star cluster variables
 let starClusterTrioShow = true
@@ -67,6 +65,9 @@ Wallpaper 2:
 //background variables
 let backgroundColour = colPurple
 let showAmbientStars = true
+
+//star cluster colours
+let starClustersColour = colLightYellow
 
 //Trio star cluster variables
 let starClusterTrioX = 170
@@ -158,6 +159,9 @@ Wallpaper 4:
 let backgroundColour = colBlack
 let showAmbientStars = true
 
+//star cluster colours
+let starClustersColour = colLightYellow
+
 //Trio star cluster variables
 let starClusterTrioShow = false
 let starClusterTrioX = 170
@@ -198,13 +202,16 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 
-  Wallpaper 5:
-  //background variables
+
+
+Wallpaper 5:
+//background variables
 let backgroundColour = colWhite
 let showAmbientStars = true
 
 //star clusters
 let starClustersColour = colGreen
+
 //Trio star cluster variables
 let starClusterTrioShow = true
 let starClusterTrioX = 170
