@@ -1,47 +1,52 @@
 //palette
-let colOrange = [227, 72, 30]
 let colRed = [207, 0, 0]
+let colOrange = [227, 72, 30]
 let colYellow = [219, 176, 33]
+let colLightYellow = [255, 238, 194]
+let colGreen = [45, 150, 71]
+let colBlue = [0, 17, 46]
 let colPink = [209, 13, 108]
 let colPurple = [24, 0, 41]
-let colBlue = [0, 17, 46]
 let colBlack = [0,0,0]
 let colWhite = [255,255,255]
 
 //your parameter variables go here!
 
 //background variables
-let backgroundColour = colBlack
+let backgroundColour = colWhite
 let showAmbientStars = true
 
+//star cluster colours
+let starClustersColour = colGreen
+
 //Trio star cluster variables
-let starClusterTrioShow = false
+let starClusterTrioShow = true
 let starClusterTrioX = 170
-let starClusterTrioY = 20
+let starClusterTrioY = 70
 
 //Duo star cluster variables
-let starClusterDuoShow = false
-let starClusterDuoX = 25
-let starClusterDuoY = 185
+let starClusterDuoShow = true
+let starClusterDuoX = 2
+let starClusterDuoY = 110
 
 //Planet variables
 let planetsShow = true
 let largePlanetColour = colBlue
-let mediumPlanetColour = colWhite
-let smallPlanetColour = colWhite
+let mediumPlanetColour = colRed
+let smallPlanetColour = colYellow
 let planetRingColour = colPink
-let planetsSize = 2
-let planetsX = 90
-let planetsY = 70
+let planetsSize = 1
+let planetsX = 10
+let planetsY = 0
 
 //UFO variables
 let ufoShow = true
 let ufoX = 55
-let ufoY = 80
-let ufoSize = 60
+let ufoY = 120
+let ufoSize = 130
 
 //Shift constellation horizontally
-let constellationX = 100
+let constellationX = 130
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -124,7 +129,7 @@ ufo(ufoX,ufoY,ufoSize)
 function star(starX,starY,starScale) {
 //star colour becomes white if smaller than 9. 
   if( starScale > 9){
-  fill (255, 238, 194)
+  fill (starClustersColour)
   }
   else{
   fill (255)
