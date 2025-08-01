@@ -108,6 +108,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 
+/////////////////////////////////
+
 Wallpaper 3:
 //background variables
 let backgroundColour = colBlack
@@ -153,6 +155,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 }
+
+/////////////////////////////////
 
 Wallpaper 4:
 //background variables
@@ -202,7 +206,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 
-
+/////////////////////////////////
 
 Wallpaper 5:
 //background variables
@@ -252,6 +256,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
+
+/////////////////////////////////
 
 Wallpaper 6
 
@@ -304,6 +310,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 
+/////////////////////////////////
+
 Wallpaper 7
 //background variables
 let backgroundColour = colPurple
@@ -352,6 +360,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
+
+/////////////////////////////////
 
 Wallpaper 8
 //background variables
@@ -402,6 +412,8 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
 }
+
+/////////////////////////////////
 
 Wallpaper 9
   //background variables
