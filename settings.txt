@@ -32,6 +32,7 @@ let planetsShow = true
 let largePlanetColour = colPink
 let mediumPlanetColour = colYellow
 let smallPlanetColour = colOrange
+let planetRingColour = colWhite
 let planetsSize = 1
 let planetsX = 40
 let planetsY = 70
@@ -70,10 +71,12 @@ let showAmbientStars = true
 let starClustersColour = colLightYellow
 
 //Trio star cluster variables
+let starClusterTrioShow = true
 let starClusterTrioX = 170
 let starClusterTrioY = 20
 
 //Duo star cluster variables
+let starClusterDuoShow = true
 let starClusterDuoX = 25
 let starClusterDuoY = 185
 
@@ -82,6 +85,7 @@ let planetsShow = true
 let largePlanetColour = colOrange
 let mediumPlanetColour = colRed
 let smallPlanetColour = colPink
+let planetRingColour = colWhite
 let planetsSize = 2
 let planetsX = 20
 let planetsY = 100
@@ -115,6 +119,9 @@ Wallpaper 3:
 let backgroundColour = colBlack
 let showAmbientStars = true
 
+//star cluster colours
+let starClustersColour = colLightYellow
+
 //Trio star cluster variables
 let starClusterTrioShow = true
 let starClusterTrioX = 170
@@ -130,6 +137,7 @@ let planetsShow = true
 let largePlanetColour = colPink
 let mediumPlanetColour = colRed
 let smallPlanetColour = colPink
+let planetRingColour = colWhite
 let planetsSize = 8
 let planetsX = 0
 let planetsY = 90
@@ -181,6 +189,7 @@ let planetsShow = true
 let largePlanetColour = colBlack
 let mediumPlanetColour = colRed
 let smallPlanetColour = colPink
+let planetRingColour = colWhite
 let planetsSize = 4
 let planetsX = 90
 let planetsY = 70
